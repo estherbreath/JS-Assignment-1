@@ -129,7 +129,45 @@ console.log("Updated object:", item);
 
 // Assignment 4
 
+// Function to create a user profile object
+function createUserProfile(name, age, isStudent, hobbies) {
+  return {
+    name: name,
+    age: age,
+    isStudent: isStudent,
+    hobbies: hobbies
+  };
+}
 
-    </script>
+// Function to get a summary of the user
+function getUserSummary(user) {
+  //  pronoun logic based on isStudent
+  let pronoun = "They";
+  if (user.name === "Alice") pronoun = "She";
+  else if (user.name === "Bob") pronoun = "He";
+
+  // Combine hobbies into a sentence
+  let hobbyList = user.hobbies.join(", ");
+  return `${user.name} is ${user.age} years old. ${pronoun} loves ${hobbyList}.`;
+}
+
+    // Function to check if user can access a restricted area (age >= 18)
+function canAccessRestrictedArea(user) {
+  return user.age >= 18;
+}
+
+// --- Create 2 user profiles ---
+const user1 = createUserProfile("Alice", 22, true, ["reading", "coding", "dancing"]);
+const user2 = createUserProfile("Bob", 16, false, ["gaming", "basketball"]);
+
+// --- Log their summaries ---
+console.log(getUserSummary(user1)); 
+console.log(getUserSummary(user2));
+
+// --- Check restricted area access ---
+console.log("Can Alice access restricted area?", canAccessRestrictedArea(user1)); // true
+console.log("Can Bob access restricted area?", canAccessRestrictedArea(user2))
+
+</script>
 </body>
 </html>
