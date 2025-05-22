@@ -44,16 +44,90 @@ if (num1 === 0 || num2 === 0) {
 } else {
   result = num1 * num2; // one even, one odd
 }
-
-console.log("Result:", result);
 console.log(result > 100 ? "Large Result" : "Small Result");//using ternary
 
+
 // Assignmet 3
+// Create the favoriteThings array
+let favoriteThings = [
+  {
+    name: "Iron Man",
+    type: "Movie",
+    rating: 7.5
+  },
+  {
+    name: "Chocolate Ice Cream",
+    type: "Food",
+    rating: 8.7
+  },
+  {
+    name: "Ludo",
+    type: "Game",
+    rating: 9.0
+  }
+];
 
+// 2. Update the rating
+favoriteThings[1].rating = 9.2;
 
+//part A
+// 1. Log names with rating > 7
+console.log("Items with rating > 7:");
+favoriteThings.forEach(item => {
+  if (item.rating > 7) {
+    console.log(item.name);
+  }
+});
 
+// 2. Check if any item is a movie
+const lovesMovies = favoriteThings.some(item => item.type === "Movie");
+if (lovesMovies) {
+  console.log("I love movies!");
+}
 
-    
+// 3. Log the type of the second item
+if (favoriteThings.length >= 2) {
+  console.log("Type of second item:", favoriteThings[1].type);
+}
+
+//Part B
+// 1. Add item to end (.push)
+favoriteThings.push({ name: "Guitar", type: "Hobby", rating: 8.3 });
+console.log("After push (add to end):", favoriteThings);
+
+// 2. Add item to beginning (.unshift)
+favoriteThings.unshift({ name: "Coffee", type: "Drink", rating: 8.8 });
+console.log("After unshift (add to beginning):", favoriteThings);
+
+// 3. Remove last item (.pop)
+favoriteThings.pop();
+console.log("After pop (remove last):", favoriteThings);
+
+// 4. Remove first item (.shift)
+favoriteThings.shift();
+console.log("After shift (remove first):", favoriteThings);
+
+// 5. Remove second item (.splice)
+favoriteThings.splice(1, 1); // index 1 = second item, remove 1 item
+console.log("After splice (remove second item):", favoriteThings);
+
+// Part C  
+// mutating the first object
+let item = favoriteThings[0];
+
+// 1. Add a new property
+item.yearReleased = 2009;
+
+// 2. Update rating
+item.rating = 9.7;
+
+// 3. Delete the 'type' property
+delete item.type;
+
+// 4. Log the updated object
+console.log("Updated object:", item);
+
+// Assignment 4
 
 
     </script>
